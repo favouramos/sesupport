@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        blockquote {
+            font-style: italic;
+            background-color: #f9f9f9;
+            border-left: 10px solid #ccc;
+            padding: 10px 20px;
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #003366;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: white;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .back-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #004080;
+        }
+
+        .about-founder {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Read More Button Styles */
+        .read-more-container {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .read-more-button {
+            padding: 8px 15px;
+            background-color: #006699;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .read-more-button:hover {
+            background-color: #007acc;
+        }
+
+        .extra-content {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 0.9em;
+            }
+
+            .about-founder {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            blockquote {
+                padding: 5px 10px;
+            }
+
+            .logo {
+                width: 60px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1, h2 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            .logo {
+                width: 50px;
+            }
+
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="banner.png" alt="Logo" class="logo">
+        </div>
+        <h1>About The Founder</h1>
+    </header>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <button class="back-button" onclick="goBack()">Go Back</button>
+    </div>
+
+    <!-- Founder Section -->
+    <section class="about-founder">
+        <div class="content">
+            <h2>Engr Dozie Akwarandu</h2>
+           <p>Engr Dozie Akwarandu is a registered Civil Engineer, with passion for making a difference in the life of others. He was diagnosed with Colorectal Cancer on pathological stage III, after some wrong diagnosis. He had multiple surgeries, a colon resection and anastomosis.</p>
+            <div class="read-more-container">
+                <button class="read-more-button" onclick="toggleReadMore()">Read More</button>
+            </div>
+            <div class="extra-content">
+                 <p>Thereafter, he continued the journey with the management of the dreaded disease. Family and friends almost gave up hope on survival; as cancer diagnosis in Nigeria is akin to a death sentence and in perception, survival rates are almost non existence.</p>
+                <blockquote>
+                    He says, "I am currently a permanent rider on the struggle bus... Multiple surgeries, Cancer, Chemotherapy. Lost count of tablets, infusion and hospital visits. My body was destroyed from all of the above. They have made me so passionate too and I am thankful for the years of survivorship."
+                </blockquote>
+                <p>He founded Nest Of Hope Advocacy and Support Community, a patient-based advocacy and support organization. Through his work, Dozie aims to provide Hope and Support to those affected by cancer, and to advocate for improved cancer care and awareness in Nigeria.</p>
+                <blockquote>
+                     "Cancer tried to dim my light, but I arose stronger, brighter and full of Hope." - Dozie Akwarandu
+                </blockquote>
+                <p>Together, let's continue to raise awareness, support one another and spread Hope to those still on their journey. "We are Survivors."</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Nest Of Hope Support. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.location.href = '../index.html';
+        }
+
+        function toggleReadMore() {
+            const extraContent = document.querySelector('.extra-content');
+            const button = document.querySelector('.read-more-button');
+            if (extraContent.style.display === 'none' || extraContent.style.display === '') {
+                extraContent.style.display = 'block';
+                button.textContent = 'Read Less';
+            } else {
+                extraContent.style.display = 'none';
+                button.textContent = 'Read More';
+            }
+        }
+
+        // Initialize the page with extra content hidden
+        document.addEventListener('DOMContentLoaded', () => {
+            const extraContent = document.querySelector('.extra-content');
+            extraContent.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

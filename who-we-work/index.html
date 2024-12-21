@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners | Nest of Hope Advocacy and Support Community</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-color: #003e71;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        /* Back Button */
+        .back-button {
+            text-decoration: none;
+            color: #003e71;
+            font-weight: bold;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: 2px solid #003e71;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #003e71;
+            color: #fff;
+        }
+
+        /* Partners Section */
+        .partners-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 30px 20px;
+            max-width: 1200px;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .partners-section h2 {
+            color: #003e71;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Partners Grid */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .partners-grid li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partners-grid img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partners-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 62, 113, 0.2);
+        }
+
+        /* Become a Partner Button */
+        .become-partner {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .become-partner a {
+            background-color: hsl(0deg 100% 37.65%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .become-partner a:hover {
+            background-color: hsl(0deg 100% 50%);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #003e71;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .partners-section {
+                padding: 30px 10px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Our Partners</h1>
+    </div>
+
+    <!-- Back Button -->
+    <a href="https://nestofhopesupport.com" class="back-button">← Back to Home</a>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <h2>Our Valued Partners</h2>
+
+        <ul class="partners-grid">
+            <li><img src="image1.jpg" alt="Nigerian Cancer Society Logo"></li>
+            <li><img src="logo.png" alt="Proventio Consulting Logo"></li>
+            <li><img src="logo.svg" alt="Centennial Associate Projects Logo"></li>
+            <li><img src="Proventio-Logo.svg" alt="World Patient Alliance Logo"></li>
+            <li><img src="site-logo.png" alt="UICC Logo"></li>
+            <li><img src="FINAL.svg" alt="NICRAT Logo"></li>
+            <li><img src="our.jpg" alt="NICRAT Logo"></li>
+        </ul>
+
+        <div class="become-partner">
+            <h2>Become a Partner</h2>
+            <a href="https://nestofhopesupport.com">Join Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Nest Of Hope Advocacy and Support Community. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

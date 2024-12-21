@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="banner.png" type="image/png">
+    <title>Nest Of Hope Support</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: hsl(207.08deg 100% 22.16%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 10px 0;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: hsl(0deg 100% 37.65%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .notice {
+            background-color: hsl(0deg 100% 90%);
+            color: hsl(0deg 100% 22%);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+            color: hsl(207.08deg 100% 22.16%);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .gallery img, .gallery video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover, .gallery video:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+
+        .modal-content-wrapper {
+            position: relative;
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            margin: 5% auto;
+            overflow: auto; /* Enable scrolling */
+        }
+
+        .modal-content {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: hsl(0deg 100% 50%);
+        }
+
+        .footer {
+            background-color: hsl(207.08deg 100% 22.16%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: hsl(0deg 100% 37.65%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: hsl(0deg 100% 50%);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Nest of Hope Gallery</h1>
+    <nav>
+        <a href="../index.html">Home</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="notice">This page showcases new updates and recent content. Check out our latest images and videos!</div>
+
+    <h2>Image Gallery</h2>
+   <div class="gallery">
+    <figure>
+        <img src="img1.jpg" alt="Gallery Image 1" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="img2.jpg" alt="Gallery Image 2" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="img3.jpg" alt="Gallery Image 3" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="4.jpg" alt="Gallery Image 4" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="5.jpg" alt="Gallery Image 5" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="6.jpg" alt="Gallery Image 6" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="7.jpg" alt="Gallery Image 7" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="8.jpg" alt="Gallery Image 8" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="9.jpg" alt="Gallery Image 9" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="10.jpg" alt="Gallery Image 10" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="11.jpg" alt="Gallery Image 11" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="12.jpg" alt="Gallery Image 12" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="13.jpg" alt="Gallery Image 13" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="14.jpg" alt="Gallery Image 14" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="15.jpg" alt="Gallery Image 15" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="16.jpg" alt="Gallery Image 16" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="17.jpg" alt="Gallery Image 17" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="18.jpg" alt="Gallery Image 18" onclick="openModal(this.src)">
+        <figcaption>2023 Survivors Get together</figcaption>
+    </figure>
+    <figure>
+        <img src="19.jpg" alt="Gallery Image 19" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="20.jpg" alt="Gallery Image 20" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="21.jpg" alt="Gallery Image 21" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="22.jpg" alt="Gallery Image 22" onclick="openModal(this.src)">
+        <figcaption>Active engagement and participation with sister and reputable organizations in cancer health Education and Advocacy - 2024 World Cancer Day Walk with Project Pink Blue</figcaption>
+    </figure>
+    <figure>
+        <img src="23.jpg" alt="Gallery Image 23" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="24.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://nestofhopesupport.com/images/4.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption>Nest Of Hope Team: Ms Chiamaka - Program Coordinator, Engr Dozie -President/CEO, Ms Barbara - Development officer at 2024 NCSD in Abuja.</figcaption>
+    </figure>
+    <figure>
+        <img src="28.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption>L-R Dr Lasebikan, Director Research at NICRAT, Engr Dozie -CEO Nest Of Hope, Mrs Glory Orji - President NEPICiN, Dr Denise Ejoor CEO Cormode Cancer Foundation at High Level Regional Seminar.</figcaption>
+    </figure>
+    <figure>
+        <img src="27.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption>Advocacy Visit to National Institute of Cancer Research And Treatment</figcaption>
+    </figure>
+    <figure>
+        <img src="https://nestofhopesupport.com/images/2.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption>Celebrating 2024 National Cancer Survivors Day</figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest1.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest2.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest3.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest4.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest5.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest6.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest7.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest8.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest9.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest10.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest11.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest12.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest13.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest14.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+    <figure>
+        <img src="https://favouramos.github.io/nestof/nest15.jpg" alt="Gallery Image 24" onclick="openModal(this.src)">
+        <figcaption></figcaption>
+    </figure>
+</div>
+
+    <h2>Video Gallery</h2>
+    <div class="gallery">
+        <figure>
+            <video controls onclick="openModal(this.src)">
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption></figcaption>
+        </figure>
+        <figure>
+            <video controls onclick="openModal(this.src)">
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption></figcaption>
+        </figure>
+        <figure>
+            <video controls onclick="openModal(this.src)">
+                <source src="video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption></figcaption>
+        </figure>
+        <figure>
+            <video controls onclick="openModal(this.src)">
+                <source src="https://favouramos.github.io/nestof/video5.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption></figcaption>
+        </figure>
+    </div>
+
+    <a href="../index.html" class="back-button">Go Back</a>
+</div>
+
+<!-- Modal for Image and Video -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content-wrapper">
+        <img class="modal-content" id="modalImg" alt="Modal Image">
+        <video controls class="modal-content" id="modalVideo" style="display: none;"></video>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Nest of Hope Support All Rights Reserved.</p>
+</div>
+
+<script>
+    function openModal(src) {
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("modalImg");
+        const modalVideo = document.getElementById("modalVideo");
+        
+        if (src.endsWith('.mp4')) {
+            modalVideo.src = src;
+            modalVideo.style.display = "block";
+            modalImg.style.display = "none";
+        } else {
+            modalImg.src = src;
+            modalImg.style.display = "block";
+            modalVideo.style.display = "none";
+        }
+        
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("modalImg");
+        const modalVideo = document.getElementById("modalVideo");
+        
+        modal.style.display = "none";
+        modalImg.src = "";
+        modalVideo.src = "";
+        modalVideo.style.display = "none";
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById("myModal");
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
+
+</body>
+</html>

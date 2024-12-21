@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="banner.png" type="image/png">
+    <title>nestofhopesupport</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(45deg, #003E71, #C00000); /* Gradient background */
+            color: white; /* Ensures text is readable on the background */
+        }
+        .container {
+            width: 100%;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        .intro p {
+            font-size: 1.2em;
+            color: #fff;
+            margin: 0 10%; /* Add some margin to prevent text from touching the edges */
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .options div {
+            width: 40%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            color: #333; /* Dark text color for visibility */
+        }
+        .options div:hover {
+            transform: scale(1.05);
+            background-color: #003E71; /* Change background on hover */
+            color: #fff; /* Change text color on hover for contrast */
+        }
+        .loading-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            font-size: 2em;
+            padding-top: 40%;
+        }
+        @media (max-width: 768px) {
+            .options {
+                flex-direction: column;
+            }
+            .options div {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+            .intro p {
+                font-size: 1em; /* Adjust font size for mobile */
+                margin: 0 5%; /* Reduce margin on mobile screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="loading-screen" id="loading-screen">
+    Loading...
+</div>
+
+<div class="container">
+    <!-- Introduction Section -->
+    <div class="intro">
+        <p>We provide you with the latest updates and an amazing gallery.</p>
+    </div>
+
+    <!-- Options for User to Select -->
+    <div class="options">
+        <div onclick="showLoading('update1.html')">
+            <h3>News & Updates</h3>
+            <p>Click here to explore the latest news and updates about our services and features.</p>
+        </div>
+        <div onclick="showLoading('News/index.html')">
+            <h3>Explore Image Gallery</h3>
+            <p>Check out our visual gallery filled with interesting and captivating images.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showLoading(page) {
+        // Show the loading screen
+        document.getElementById("loading-screen").style.display = 'block';
+        
+        // Redirect after 1 second
+        setTimeout(function() {
+            window.location.href = page;
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>

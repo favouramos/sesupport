@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Board of Trustees</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: hsl(207.08deg 100% 22.16%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .logo {
+            display: block;
+            margin: 20px auto;
+            width: 150px; /* Adjust as needed */
+        }
+
+        h1 {
+            text-align: center;
+            color: hsl(207.08deg 100% 22.16%);
+            margin: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            background-color: hsl(0deg 100% 37.65%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: hsl(0deg 100% 50%);
+        }
+
+        .trustee {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+
+        .trustee:hover {
+            transform: scale(1.02);
+        }
+
+        .trustee img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .trustee h2 {
+            color: hsl(207.08deg 100% 22.16%);
+            margin-bottom: 10px;
+        }
+
+        .trustee p {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: hsl(207.08deg 100% 22.16%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Responsive Design */
+        @media screen and (min-width: 768px) {
+            .trustee {
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 20px 40px;
+            }
+
+            .trustee img {
+                margin-right: 20px;
+            }
+
+            .trustee p {
+                text-align: left;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .trustee {
+                padding: 15px;
+            }
+
+            .trustee img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="banner.png" alt="Logo" class="logo"> <!-- Logo added here -->
+        <div class="back-button-container">
+    <button class="back-button" onclick="window.location.href='https://nestofhopesupport.com'">Go Back</button>
+</div>
+
+        <h1>The Board of Trustees</h1>
+
+        <!-- Trustee 1 -->
+        <div class="trustee">
+            <img src="image4.jpg" alt="Dr Nwogu Chinweotuto">
+            <div>
+                <h2>Dr Nwogu Chinweotuto</h2>
+                <p>A devout and compassionate medical doctor. Interested in innovation in medical practice, access to quality health care, and patient navigation. Dr. Chinwe makes a lot of sacrifices for patients, especially those with cancer, through practice at Oxford, UK.</p>
+            </div>
+        </div>
+
+        <!-- Trustee 2 -->
+        <div class="trustee">
+            <img src="image3.jpg" alt="Mrs Jide Ofuruiche">
+            <div>
+                <h2>Mrs Jide Ofuruiche</h2>
+                <p>A trained public administrator who developed herself as a broadcast journalist. She is enthusiastic about the activities and promotion of cancer care and well-being.</p>
+            </div>
+        </div>
+
+        <!-- Trustee 3 -->
+        <div class="trustee">
+            <img src="image2.jpg" alt="Dr Oragui Philip C.">
+            <div>
+                <h2>Bar Chijioke Chinesom Nwogu</h2>
+                <p>was called to Nigeria Bar in May 2008. A practicing lawyer and managing partner at the law firm of C O Nwaogu & Co, having served at Oba  S K A Adedoyin & Co. 
+Bar CC is a humanitarian and passionate person, and does a lot for humanity. He is a member of Rotary International, indeed a Paul Harris Fellow (PHF) of Rotary Foundation.</p>
+            </div>
+        </div>
+
+        <!-- Trustee 4 -->
+        <div class="trustee">
+            <img src="image1.jpg" alt="Bar Nwogu Chijioke Chinesom">
+            <div>
+                <h2>Dr Oragui Philip C.</h2>
+                <p>is a passionate and highly motivated medical practitioner. He believes that accurate diagnosis and artistic patient care are prerequisites for proper healing. He is a surgeon and the Medical Director of Dove Hospital and Diagnostic center, Ajah, Lagos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Nest Of Hope Advocacy and Support Community. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript functionality can go here
+        console.log("Page loaded successfully!");
+    </script>
+</body>
+</html>

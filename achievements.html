@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="banner.png" type="image/png">
+    <title>Our Achievements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #0056b3;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #ff4500;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">Back</a> <!-- Back Button -->
+        <h1>What We Have Achieved/Our Impact</h1>
+        <div class="grid">
+            <div class="card">
+                <h2><span class="number" data-target="15">0</span>+</h2>
+                <p>Advocacy engagements to drive change</p>
+            </div>
+            <div class="card">
+                <h2><span class="number" data-target="1000">0</span>+</h2>
+                <p>Messages, Emails, Letters sent</p>
+            </div>
+            <div class="card">
+                <h2><span class="number" data-target="10000">0</span>+</h2>
+                <p>IEC and Support resources printed and shared</p>
+            </div>
+            <div class="card">
+                <h2><span class="number" data-target="500">0</span>+</h2>
+                <p>Patients and families spoken to/Peer mentorship</p>
+            </div>
+            <div class="card">
+                <h2><span class="number" data-target="50">0</span>+</h2>
+                <p>Supported on treatment</p>
+            </div>
+            <div class="card">
+                <h2><span class="number" data-target="1400">0</span>+</h2>
+                <p>Colostomy bags and accessories distributed</p>
+            </div>
+            <div class="card">
+                <h2><span class="number" data-target="100">0</span>+</h2>
+                <p>Breast prosthetics</p>
+            </div>
+            <div class="card">
+                <h2>N<span class="number" data-target="8">0</span> Million+</h2>
+                <p>For support & treatment</p>
+            </div>
+            <div class="card">
+                <h2>N<span class="number" data-target="4.5">0</span> Million+</h2>
+                <p>On awareness and advocacy</p>
+            </div>
+        </div>
+        <footer>
+            <p>With thanks to National Institute for Cancer Research and Treatment, Proventio Consulting, Sonsy Ohiro, Our Friends & Families.</p>
+        </footer>
+    </div>
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".number");
+        const speed = 20; // Speed of the animation
+        const intervalTime = 20; // Time between updates for all counters (in ms)
+
+        const updateCounters = () => {
+            let allCompleted = true; // Track if all counters have reached their targets
+
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute("data-target"));
+                const current = parseFloat(counter.innerText);
+
+                // Calculate increment
+                const increment = Math.max(target / speed, 1);
+
+                if (current + increment < target) {
+                    counter.innerText = (current + increment).toFixed(0);
+                    allCompleted = false; // At least one counter is still running
+                } else {
+                    counter.innerText = target.toLocaleString(); // Format number with commas
+                }
+            });
+
+            // If not all counters are completed, continue the animation
+            if (!allCompleted) {
+                setTimeout(updateCounters, intervalTime);
+            }
+        };
+
+        // Start updating all counters simultaneously
+        updateCounters();
+    });
+</script>
+
+</body>
+</html>
