@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image & Video Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            max-width: 300px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover,
+        .gallery-item video:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content img,
+        .modal-content video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            border: none;
+            font-size: 24px;
+            color: black;
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 5px 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-btn:hover {
+            background-color: #f00;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                max-width: 100%;
+            }
+
+            .modal-content {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-container">
+        <!-- Image 1 -->
+        <div class="gallery-item" onclick="openModal('image1.jpg')">
+            <img src="image1.jpg" alt="Image 1">
+        </div>
+
+        <!-- Image 2 -->
+        <div class="gallery-item" onclick="openModal('image2.jpg')">
+            <img src="image2.jpg" alt="Image 2">
+        </div>
+
+        <!-- Video -->
+        <div class="gallery-item" onclick="openModal('video1.mp4', true)">
+            <video src="video1.mp4" controls muted></video>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">X</button>
+            <img id="modalImage" style="display: none;">
+            <video id="modalVideo" style="display: none;" controls></video>
+        </div>
+    </div>
+
+    <script>
+        function openModal(src, isVideo = false) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            const modalVideo = document.getElementById('modalVideo');
+
+            if (isVideo) {
+                modalImage.style.display = 'none';
+                modalVideo.style.display = 'block';
+                modalVideo.src = src;
+            } else {
+                modalVideo.style.display = 'none';
+                modalImage.style.display = 'block';
+                modalImage.src = src;
+            }
+
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('active');
+            document.getElementById('modalImage').src = '';
+            document.getElementById('modalVideo').src = '';
+        }
+    </script>
+
+</body>
+</html>
