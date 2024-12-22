@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="banner.png" type="image/png">
     <title>Contact Us</title>
     <style>
         body {
@@ -52,6 +53,13 @@
         .contact-form input,
         .contact-form textarea {
             background: rgba(255, 255, 255, 0.8);
+            transition: transform 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            transform: translateX(5px) rotate(2deg);
+            outline: none;
         }
 
         .contact-form button {
@@ -68,6 +76,19 @@
             margin-top: 20px;
             color: white;
             text-align: center;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-info i {
+            margin-right: 8px;
+            color: #007bff;
         }
 
         @media (max-width: 768px) {
@@ -90,14 +111,15 @@
         <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
         <button onclick="sendMessage()">Submit</button>
         <div class="contact-info">
-            <p>Wing B, Ground Floor<br>
+            <p><i class="fa fa-map-marker"></i> Wing B, Ground Floor<br>
             Reinsurance Building, Plot 784 Herbert Macaulay Way, CBD, Abuja.</p>
-            <p>#76 St. Michael's Road<br>
+            <p><i class="fa fa-map-marker"></i> #76 St. Michael's Road<br>
             Aba, Abia State.</p>
-            <p>Phone: 07036492281</p>
+            <p><i class="fa fa-phone"></i> Phone: <a href="tel:+2347036492281" style="color: white; text-decoration: none;">07036492281</a></p>
         </div>
     </div>
 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
         function sendMessage() {
             const name = document.getElementById('name').value;
