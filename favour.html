@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>For Favour 💖</title>
   <style>
-    /* Dark romantic theme */
     html,body{
       height:100%;
       margin:0;
@@ -13,7 +12,7 @@
       color:#fff;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
       font-weight:bold;
-      overflow-y:auto; /* <-- allow scrolling */
+      overflow-y:auto;
       overflow-x:hidden;
     }
 
@@ -60,13 +59,31 @@
 
     .signature{margin-top:20px;font-size:19px;color:#ffccf2;}
 
+    /* Play button */
+    .music-btn{
+      margin-top:20px;
+      padding:12px 22px;
+      border:none;
+      border-radius:30px;
+      font-size:18px;
+      background:linear-gradient(90deg,#ff4d88,#ff99cc);
+      color:white;
+      cursor:pointer;
+      font-weight:bold;
+      box-shadow:0 6px 15px rgba(255,0,90,0.4);
+      transition:transform .2s;
+    }
+    .music-btn:hover{
+      transform:scale(1.05);
+    }
+
     /* Heart bounce animation */
     @keyframes bounce {
       0%,100%{transform:translateY(0);}
       50%{transform:translateY(-10px);}
     }
 
-    /* Floating love stickers */
+    /* Floating hearts */
     .heart{
       position:absolute;
       font-size:28px;
@@ -84,6 +101,12 @@
 <body>
   <!-- floating hearts background -->
   <div id="hearts"></div>
+
+  <!-- Background music -->
+  <audio id="bg-music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
 
   <div class="wrap">
     <article class="card">
@@ -110,11 +133,13 @@
       <p class="care">I’m coming soon, my Queen. Get well fast for me 💖</p>
 
       <p class="signature">— Always yours, Daniel</p>
+
+      <!-- Music play button -->
+      <button class="music-btn" onclick="toggleMusic()">🎵 Play Love Song</button>
     </article>
   </div>
 
   <script>
-    // Create floating love stickers (hearts)
     const heartsContainer=document.getElementById("hearts");
     function createHeart(){
       const heart=document.createElement("div");
@@ -126,6 +151,21 @@
       setTimeout(()=>heart.remove(),6000);
     }
     setInterval(createHeart,500);
+
+    // Music toggle
+    const music=document.getElementById("bg-music");
+    let playing=false;
+    function toggleMusic(){
+      if(!playing){
+        music.play();
+        document.querySelector(".music-btn").innerText="⏸ Pause Love Song";
+        playing=true;
+      }else{
+        music.pause();
+        document.querySelector(".music-btn").innerText="🎵 Play Love Song";
+        playing=false;
+      }
+    }
   </script>
 </body>
 </html>
