@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For Favour 💖</title>
+  <style>
+    /* Dark romantic theme */
+    html,body{
+      height:100%;
+      margin:0;
+      background:#0d0d0d;
+      color:#fff;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      font-weight:bold;
+      overflow-y:auto; /* <-- allow scrolling */
+      overflow-x:hidden;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      text-align:center;
+      z-index:2;
+      position:relative;
+    }
+
+    .card{
+      max-width:800px;
+      width:100%;
+      line-height:1.7;
+      font-size:18px;
+      background:rgba(0,0,0,0.6);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:0 0 25px rgba(255,0,90,0.5);
+    }
+
+    h1{
+      font-size:32px;
+      margin-bottom:10px;
+      color:#ff4d88;
+      animation:bounce 1.5s infinite;
+    }
+
+    .big{font-size:22px;color:#ff99cc;}
+    .care{
+      display:inline-block;
+      margin-top:16px;
+      padding:12px 18px;
+      border-radius:12px;
+      background:linear-gradient(90deg,#ff0066,#ff99cc);
+      color:#fff;
+      box-shadow:0 6px 20px rgba(255,0,90,0.4);
+      font-size:20px;
+    }
+
+    .signature{margin-top:20px;font-size:19px;color:#ffccf2;}
+
+    /* Heart bounce animation */
+    @keyframes bounce {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+    }
+
+    /* Floating love stickers */
+    .heart{
+      position:absolute;
+      font-size:28px;
+      color:#ff4da6;
+      animation:floatUp 6s linear infinite;
+      opacity:0.7;
+    }
+    @keyframes floatUp {
+      0%{transform:translateY(100vh) scale(0.8);opacity:0;}
+      20%{opacity:1;}
+      100%{transform:translateY(-10vh) scale(1.4);opacity:0;}
+    }
+  </style>
+</head>
+<body>
+  <!-- floating hearts background -->
+  <div id="hearts"></div>
+
+  <div class="wrap">
+    <article class="card">
+      <h1>For My Love Favour 💌</h1>
+      <p class="big">My dearest Favour,</p>
+
+      <p>I heard you’re not feeling well, and my heart aches until I can hold you.  
+      You are my peace, my joy, and the light I always run to.  
+      Please rest, because I am coming soon to take care of you.</p>
+
+      <p>Imagine me beside you now — holding your hand, kissing your forehead softly,  
+      and whispering over and over: <br><span style="color:#ff66a3;font-size:22px;">“I love you endlessly.”</span></p>
+
+      <p>Every time you smile, the world becomes brighter for me.  
+      Every time you laugh, my soul feels alive.  
+      Even now while you’re resting, I carry you in every heartbeat, every breath, every thought.  
+      You are my safe place, my forever, my reason to fight and to dream.</p>
+
+      <p>Favour, you’re not just my girlfriend — you are the woman I want to grow with,  
+      to build with, to pray with, to love without end.  
+      I don’t need fancy words to tell you this: <br>
+      <span style="color:#ff4d88;font-size:24px;">You are my everything, my queen, my love story forever.</span></p>
+
+      <p class="care">I’m coming soon, my Queen. Get well fast for me 💖</p>
+
+      <p class="signature">— Always yours, Daniel</p>
+    </article>
+  </div>
+
+  <script>
+    // Create floating love stickers (hearts)
+    const heartsContainer=document.getElementById("hearts");
+    function createHeart(){
+      const heart=document.createElement("div");
+      heart.className="heart";
+      heart.innerHTML="❤️";
+      heart.style.left=Math.random()*100+"vw";
+      heart.style.animationDuration=3+Math.random()*3+"s";
+      heartsContainer.appendChild(heart);
+      setTimeout(()=>heart.remove(),6000);
+    }
+    setInterval(createHeart,500);
+  </script>
+</body>
+</html>
