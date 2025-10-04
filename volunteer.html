@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nest of Hope — Volunteer</title>
+  <meta name="description" content="Become a volunteer with Nest of Hope Advocacy & Support Community. Join our mission in advocacy, awareness, mentorship, rehabilitation, and psychological support.">
+<meta name="keywords" content="Nest of Hope, Volunteer, NGO, Advocacy, Mentorship, Support, Rehabilitation, Empowerment, Awareness, Nonprofit, Nigeria, Community Service">
+<meta name="author" content="Nest of Hope Advocacy & Support Community">
+
+<!-- Open Graph / Social Media Preview -->
+<meta property="og:title" content="Volunteer | Nest of Hope Advocacy & Support Community">
+<meta property="og:description" content="Join us as a volunteer and help transform lives through advocacy, empowerment, and support.">
+<meta property="og:image" content="banner.png">
+<meta property="og:url" content="https://nestofhopesupport.com/volunteer">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Volunteer | Nest of Hope Advocacy & Support Community">
+<meta name="twitter:description" content="Be part of Nest of Hope as a volunteer. Your skills and compassion can make a real difference.">
+<meta name="twitter:image" content="banner.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="banner.png">
+
+  <link rel="icon" type="image/png" href="banner.png">
+  <style>
+    :root{
+      --navy:#001C40;
+      --accent:#C00000;
+      --muted:#e0e0e0;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:linear-gradient(180deg,var(--navy) 0%, #06223a 60%);color:whitesmoke;min-height:100vh;display:flex;flex-direction:column}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--max-width);margin:32px auto;padding:20px;flex:1;display:flex;flex-direction:column;justify-content:center}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:30px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff5151);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 8px 30px rgba(0,0,0,0.45)}
+    .logo span{font-size:18px}
+    .back-btn{display:inline-block;padding:10px 16px;background:var(--accent);color:white;border-radius:10px;font-weight:bold;box-shadow:0 6px 18px rgba(0,0,0,0.3);}
+    .back-btn:hover{background:#a60000}
+
+    h1{font-size:28px}
+    p.lead{margin-top:6px;color:rgba(255,255,255,0.9)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:24px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter:blur(4px)}
+
+    .appeal{margin-bottom:20px;line-height:1.6;color:#f3f6f9}
+    .appeal h2{margin-top:0;color:var(--accent)}
+
+    form{display:grid;gap:18px}
+    label{font-weight:bold;font-size:14px;color:#e0e0e0}
+    input,select,textarea{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.15);
+      background:rgba(255,255,255,0.08);
+      color:white;
+      font-size:15px;
+      appearance:none;
+    }
+    option{background:#001C40;color:white;}
+    input:focus,textarea:focus,select:focus{
+      outline:none;
+      border-color:var(--accent);
+      box-shadow:0 0 0 2px rgba(192,0,0,0.4)
+    }
+    textarea{min-height:120px;resize:vertical}
+
+    .btn-submit{background:var(--accent);border:none;padding:14px;font-weight:bold;border-radius:10px;color:white;cursor:pointer;font-size:16px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+    .btn-submit:hover{background:#a60000}
+
+    footer{margin-top:40px;padding:18px;text-align:center;color:rgba(255,255,255,0.8)}
+
+    /* Fullscreen overlay loader */
+    .overlay {
+      display:none;
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.85);
+      color:white;
+      z-index:9999;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+    .spinner {
+      border:6px solid rgba(255,255,255,0.2);
+      border-top:6px solid var(--accent);
+      border-radius:50%;
+      width:50px;
+      height:50px;
+      animation: spin 1s linear infinite;
+      margin-bottom:20px;
+    }
+    @keyframes spin {
+      0% { transform:rotate(0deg) }
+      100% { transform:rotate(360deg) }
+    }
+    .success-message {
+      display:none;
+      background:rgba(0,0,0,0.6);
+      padding:20px;
+      border-radius:12px;
+      text-align:center;
+    }
+    @media(max-width:480px){h1{font-size:22px}.logo{width:48px;height:48px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"><span>NH</span></div>
+        <div>
+          <h1>Volunteer with Us</h1>
+          <p class="lead">We need volunteers to join our work and activities</p>
+        </div>
+      </div>
+      <a href="index.html" class="back-btn">← Back</a>
+    </header>
+
+    <section class="card" id="form-section">
+      <div class="appeal">
+        <h2>Why We Need You</h2>
+        <p>
+          At Nest of Hope, we believe that change starts with people who are willing to give their time, skills, and compassion.  
+          Volunteers are the heartbeat of our movement — they amplify our voice, extend our reach, and bring healing closer to those who need it.  
+          By joining us, you become part of a family dedicated to advocacy, awareness, mentorship, and empowerment.
+        </p>
+        <p><strong>We invite you to fill the form below and join us as a volunteer.</strong></p>
+      </div>
+
+      <!-- ✅ Connected to your Apps Script Web App -->
+      <form id="volunteer-form" action="https://script.google.com/macros/s/AKfycbywBrFLxm3hhEFqSWGKrQUTTLu454I0Qp7C1niFcNH-iPiRqN64rOUpFlNMdXC11Wan/exec" method="POST">
+        <div>
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div>
+  <label for="interest">Area of Interest</label>
+  <select id="interest" name="interest" required>
+    <option value="">Select an area</option>
+    <option>Advocacy</option>
+    <option>Awareness</option>
+    <option>Treatment Support</option>
+    <option>Mentorship</option>
+    <option>Rehabilitation</option>
+    <option>Psychological Support</option>
+  </select>
+</div>
+
+<div>
+  <label for="message">Why do you want to volunteer?</label>
+  <textarea id="message" name="message" placeholder="Write a short message..." required></textarea>
+</div>
+
+        <button type="submit" class="btn-submit">Join as Volunteer</button>
+      </form>
+    </section>
+
+    <!-- Success Message -->
+    <div class="success-message" id="success-message">
+      <h2>🎉 Thank You!</h2>
+      <p>Your volunteer application has been submitted successfully. 💖</p>
+      <p>We’ll reach out to you soon.</p>
+    </div>
+  </div>
+
+  <footer>© <span id="year"></span> Nest of Hope Advocacy & Support Community</footer>
+
+  <!-- Loader Overlay -->
+  <div class="overlay" id="overlay">
+    <div class="spinner"></div>
+    <p>Submitting your details… Please wait.</p>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById("volunteer-form");
+    const overlay = document.getElementById("overlay");
+    const successMessage = document.getElementById("success-message");
+    const formSection = document.getElementById("form-section");
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault(); // stop normal submit
+      overlay.style.display = "flex";
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form)
+      })
+      .then(res => res.text())
+      .then(() => {
+        overlay.style.display = "none";
+        formSection.style.display = "none";
+        successMessage.style.display = "block";
+      })
+      .catch(() => {
+        overlay.style.display = "none";
+        alert("Something went wrong. Please try again.");
+      });
+    });
+  </script>
+</body>
+</html>
