@@ -25,201 +25,382 @@
 <link rel="icon" type="image/png" href="banner.png">
 
   <link rel="icon" type="image/png" href="banner.png">
-  <style>
-    :root{
-      --navy:#001C40;
-      --accent:#C00000;
-      --muted:#e0e0e0;
-      --glass: rgba(255,255,255,0.04);
-      --radius:14px;
-      --max-width:1100px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:linear-gradient(180deg,var(--navy) 0%, #06223a 60%);color:whitesmoke;min-height:100vh;display:flex;flex-direction:column}
-    a{text-decoration:none;color:inherit}
-    .container{max-width:var(--max-width);margin:32px auto;padding:20px;flex:1;display:flex;flex-direction:column;justify-content:center}
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:30px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff5151);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 8px 30px rgba(0,0,0,0.45)}
-    .logo span{font-size:18px}
-    .back-btn{display:inline-block;padding:10px 16px;background:var(--accent);color:white;border-radius:10px;font-weight:bold;box-shadow:0 6px 18px rgba(0,0,0,0.3);}
-    .back-btn:hover{background:#a60000}
-
-    h1{font-size:28px}
-    p.lead{margin-top:6px;color:rgba(255,255,255,0.9)}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:24px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter:blur(4px)}
-
-    .appeal{margin-bottom:20px;line-height:1.6;color:#f3f6f9}
-    .appeal h2{margin-top:0;color:var(--accent)}
-
-    form{display:grid;gap:18px}
-    label{font-weight:bold;font-size:14px;color:#e0e0e0}
-    input,select,textarea{
-      width:100%;
-      padding:12px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,0.15);
-      background:rgba(255,255,255,0.08);
-      color:white;
-      font-size:15px;
-      appearance:none;
+    body {
+      background-color: #05213C;
+      color: #04203C;
+      min-height: 100vh;
     }
-    option{background:#001C40;color:white;}
-    input:focus,textarea:focus,select:focus{
-      outline:none;
-      border-color:var(--accent);
-      box-shadow:0 0 0 2px rgba(192,0,0,0.4)
+
+    header {
+      background: linear-gradient(135deg, #04203C, #C00000);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px 60px;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
-    textarea{min-height:120px;resize:vertical}
 
-    .btn-submit{background:var(--accent);border:none;padding:14px;font-weight:bold;border-radius:10px;color:white;cursor:pointer;font-size:16px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
-    .btn-submit:hover{background:#a60000}
-
-    footer{margin-top:40px;padding:18px;text-align:center;color:rgba(255,255,255,0.8)}
-
-    /* Fullscreen overlay loader */
-    .overlay {
-      display:none;
-      position:fixed;
-      top:0;left:0;width:100%;height:100%;
-      background:rgba(0,0,0,0.85);
-      color:white;
-      z-index:9999;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:20px;
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
     }
-    .spinner {
-      border:6px solid rgba(255,255,255,0.2);
-      border-top:6px solid var(--accent);
-      border-radius:50%;
-      width:50px;
-      height:50px;
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 90%;
+      margin: 0 auto;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    a.back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    a.back-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .card {
+      background: #fff;
+      margin: -50px auto 40px;
+      max-width: 900px;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .appeal h2 {
+      color: #C00000;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .appeal p {
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .form-container {
+      margin-top: 40px;
+    }
+
+    form label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #04203C;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    form input:focus, form select:focus, form textarea:focus {
+      border-color: #C00000;
+      box-shadow: 0 0 5px rgba(192, 0, 0, 0.2);
+      outline: none;
+    }
+
+    form textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      width: 100%;
+      background: #C00000;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    button:hover {
+      background: #04203C;
+    }
+
+    #invalidPopup, #emptyPopup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(192, 0, 0, 0.95);
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 40vh;
+      z-index: 9999;
+      animation: fadeIn 0.3s ease;
+    }
+
+    #loadingOverlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+      z-index: 9998;
+      backdrop-filter: blur(3px);
+    }
+
+    #loadingOverlay .spinner {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      border-top: 5px solid #C00000;
+      border-radius: 50%;
       animation: spin 1s linear infinite;
-      margin-bottom:20px;
     }
+
+    #loadingOverlay p {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* ✅ Success Popup */
+    #successPopup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #04203C, #C00000);
+      color: #fff;
+      text-align: center;
+      z-index: 10000;
+      animation: fadeIn 0.4s ease;
+    }
+
+    #successPopup .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 400px;
+      padding: 30px;
+    }
+
+    #successPopup h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    #successPopup p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    #successPopup a {
+      display: inline-block;
+      background: #fff;
+      color: #C00000;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    #successPopup a:hover {
+      background: #f1f1f1;
+    }
+
     @keyframes spin {
-      0% { transform:rotate(0deg) }
-      100% { transform:rotate(360deg) }
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
     }
-    .success-message {
-      display:none;
-      background:rgba(0,0,0,0.6);
-      padding:20px;
-      border-radius:12px;
-      text-align:center;
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    @media(max-width:480px){h1{font-size:22px}.logo{width:48px;height:48px}}
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .card { margin: -30px 15px 30px; padding: 25px; }
+      header p { max-width: 95%; }
+      #successPopup h2 { font-size: 1.7rem; }
+      #successPopup p { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo"><span>NH</span></div>
-        <div>
-          <h1>Volunteer with Us</h1>
-          <p class="lead">We need volunteers to join our work and activities</p>
-        </div>
-      </div>
-      <a href="index.html" class="back-btn">← Back</a>
-    </header>
 
-    <section class="card" id="form-section">
-      <div class="appeal">
-        <h2>Why We Need You</h2>
-        <p>
-          At Nest of Hope, we believe that change starts with people who are willing to give their time, skills, and compassion.  
-          Volunteers are the heartbeat of our movement — they amplify our voice, extend our reach, and bring healing closer to those who need it.  
-          By joining us, you become part of a family dedicated to advocacy, awareness, mentorship, and empowerment.
-        </p>
-        <p><strong>We invite you to fill the form below and join us as a volunteer.</strong></p>
-      </div>
+  <header>
+    <a href="index.html" class="back-btn">← Back</a>
+    <h1>Volunteer with Us</h1>
+    <p class="lead">We need volunteers to join our work and activities</p>
+  </header>
 
-      <!-- ✅ Connected to your Apps Script Web App -->
-      <form id="volunteer-form" action="https://script.google.com/macros/s/AKfycbywBrFLxm3hhEFqSWGKrQUTTLu454I0Qp7C1niFcNH-iPiRqN64rOUpFlNMdXC11Wan/exec" method="POST">
-        <div>
-          <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-        <div>
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-        </div>
-        <div>
-  <label for="interest">Area of Interest</label>
-  <select id="interest" name="interest" required>
-    <option value="">Select an area</option>
-    <option>Advocacy</option>
-    <option>Awareness</option>
-    <option>Treatment Support</option>
-    <option>Mentorship</option>
-    <option>Rehabilitation</option>
-    <option>Psychological Support</option>
-  </select>
-</div>
+  <section class="card" id="form-section">
+    <div class="appeal">
+      <h2>Why We Need You</h2>
+      <p>
+        At <strong>Nest of Hope</strong>, we believe that change starts with people who are willing to give their time, skills, and compassion.
+        Volunteers are the heartbeat of our movement — they amplify our voice, extend our reach, and bring healing closer to those who need it.
+      </p>
+      <p><strong>We invite you to fill the form below and join us as a volunteer.</strong></p>
+    </div>
 
-<div>
-  <label for="message">Why do you want to volunteer?</label>
-  <textarea id="message" name="message" placeholder="Write a short message..." required></textarea>
-</div>
+    <div class="form-container">
+      <form id="volunteerForm" action="https://script.google.com/macros/s/AKfycbywBrFLxm3hhEFqSWGKrQUTTLu454I0Qp7C1niFcNH-iPiRqN64rOUpFlNMdXC11Wan/exec" method="POST" autocomplete="off" novalidate>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required>
 
-        <button type="submit" class="btn-submit">Join as Volunteer</button>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]*" inputmode="numeric" maxlength="15" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+
+        <label for="interest">Area of Interest</label>
+        <select id="interest" name="interest" required>
+          <option value="">Select an area</option>
+          <option>Advocacy</option>
+          <option>Awareness</option>
+          <option>Treatment Support</option>
+          <option>Mentorship</option>
+          <option>Rehabilitation</option>
+          <option>Psychological Support</option>
+        </select>
+
+        <label for="message">Why do you want to volunteer?</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit</button>
       </form>
-    </section>
+    </div>
+  </section>
 
-    <!-- Success Message -->
-    <div class="success-message" id="success-message">
+  <div id="invalidPopup">⚠️ Enter correct details!</div>
+  <div id="emptyPopup">⚠️ Please fill out all fields!</div>
+
+  <div id="loadingOverlay">
+    <div class="spinner"></div>
+    <p>Submitting your response...</p>
+  </div>
+
+  <!-- ✅ Success Popup -->
+  <div id="successPopup">
+    <div class="content">
       <h2>🎉 Thank You!</h2>
-      <p>Your volunteer application has been submitted successfully. 💖</p>
-      <p>We’ll reach out to you soon.</p>
+      <p>Your volunteer registration was successful. We appreciate your support!</p>
+      <a href="index.html">← Back to Home</a>
     </div>
   </div>
 
-  <footer>© <span id="year"></span> Nest of Hope Advocacy & Support Community</footer>
-
-  <!-- Loader Overlay -->
-  <div class="overlay" id="overlay">
-    <div class="spinner"></div>
-    <p>Submitting your details… Please wait.</p>
-  </div>
-
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const form = document.getElementById('volunteerForm');
+    const invalidPopup = document.getElementById('invalidPopup');
+    const emptyPopup = document.getElementById('emptyPopup');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const successPopup = document.getElementById('successPopup');
 
-    const form = document.getElementById("volunteer-form");
-    const overlay = document.getElementById("overlay");
-    const successMessage = document.getElementById("success-message");
-    const formSection = document.getElementById("form-section");
+    const suspiciousPattern = /[<>#:/\\]|https?|www|[\u{1F600}-\u{1F64F}]/u;
 
-    form.addEventListener("submit", function(e){
-      e.preventDefault(); // stop normal submit
-      overlay.style.display = "flex";
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const inputs = Array.from(form.querySelectorAll('input, textarea, select'));
+      let isSuspicious = false;
+      let isEmpty = false;
+
+      for (let field of inputs) {
+        const value = field.value.trim();
+        if (!value) {
+          isEmpty = true;
+          break;
+        }
+        if (field.id === 'email') {
+          if (suspiciousPattern.test(value)) {
+            isSuspicious = true;
+            break;
+          }
+        } else {
+          if (suspiciousPattern.test(value) || value.includes('@')) {
+            isSuspicious = true;
+            break;
+          }
+        }
+      }
+
+      if (isEmpty) {
+        emptyPopup.style.display = 'block';
+        setTimeout(() => emptyPopup.style.display = 'none', 4000);
+        return;
+      }
+
+      if (isSuspicious) {
+        invalidPopup.style.display = 'block';
+        setTimeout(() => invalidPopup.style.display = 'none', 4000);
+        return;
+      }
+
+      loadingOverlay.style.display = 'block';
 
       fetch(form.action, {
         method: "POST",
         body: new FormData(form)
       })
-      .then(res => res.text())
-      .then(() => {
-        overlay.style.display = "none";
-        formSection.style.display = "none";
-        successMessage.style.display = "block";
+      .then(response => {
+        loadingOverlay.style.display = 'none';
+        if (response.ok) {
+          form.reset();
+          successPopup.style.display = 'block';
+        } else {
+          alert("❌ Submission failed. Please try again.");
+        }
       })
       .catch(() => {
-        overlay.style.display = "none";
-        alert("Something went wrong. Please try again.");
+        loadingOverlay.style.display = 'none';
+        alert("⚠️ Network error. Please try again later.");
       });
     });
   </script>
+
 </body>
 </html>
+
